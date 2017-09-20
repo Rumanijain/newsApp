@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row"> 
+      <div>
+      <div class="container col-sm-4 col-sm-4" *ngFor=" let new of data">
+<div id="display" class="card">
+          
+          <a href="{{new.url}}" target="blank">
+             <img class="card-img-top" src= "{{new.urlToImage}}" width="100%"></a>
+          <div class="card-block">
+              
+              <h4 class="card-title mt-3">{{new.title}}</h4>
+              <div class="meta card-text">
+                  <a>By:{{new.author}}</a>
+              </div>
+              <div class="card-text">
+              <p class="lead">{{new.description.slice(0,50)}} </p>
+                    <a href="{{new.url}}"> Link to {{new.name}} website  </a>
+             
+              </div>
+          </div>
+                    <div class="card-footer">
+              <small>comments: {{new.comments}}</small>
+
+          </div>
+          <div class="card-footer">
+          <button class="btn btn-info float-right btn-md" (click)="deleteObject(new)">Delete</button>
+        <div>
+            <input type="text"   #review placeholder="Your Review">
+              <button  class="btn btn-info btn-sm" (click)="updateNews(new,review.value)">Update</button>
+       
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+         <!-- <app-update *ngIf="update" [new]="update"  ></app-update>  -->
+        </div>

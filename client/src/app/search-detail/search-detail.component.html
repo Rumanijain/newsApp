@@ -1,0 +1,21 @@
+<div *ngIf="new">
+  <div id="display" class="card">
+          
+    <a href="{{new.url}}" target="blank">
+      <img class="card-img-top" src={{new.urlToImage}} width="100%"></a>
+       <div class="card-block">
+          <h4 class="card-title mt-3">{{new.title}}</h4>
+           <div class="meta card-text">
+                 <a>By:{{new.author}}</a>
+            </div>
+            <div class="card-text">
+              <p class="lead">{{new.description.slice(0,100)}} </p>
+              <a href="{{new.url}}"> Link to {{new.name}} website  </a>
+            </div>
+       </div>
+       <div class="card-footer">
+          <small>Published At: {{new.publishedAt}}</small>
+          <button class="btn btn-info float-right btn-sm" (click)="addcontent(new)"> Add To Favrouites</button>
+       </div>
+  </div>
+</div>

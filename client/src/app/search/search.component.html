@@ -1,0 +1,15 @@
+<div class="input-group">
+  <button type="button"(click)=newSearch()>
+    search
+  </button> 
+           
+  <button type="button" (click)=channellist(temp) class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">channel list</button>
+            
+  <div class="dropdown-menu">
+    <ul>
+      <li *ngFor=" let news of data.sources" (click)=setChannel($event) id={{news.id}}>{{news.name}}</li>
+    </ul>
+  </div>
+</div>
+<input type="text" [(ngModel)]=newsdaily class="form-control" aria-label="Text input with dropdown button">  
+
